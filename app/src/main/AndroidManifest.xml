@@ -11,10 +11,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GolyInstagramClone">
         <activity
+            android:name=".SocialMediaActivity"
+            android:exported="true" />
+        <activity
             android:name=".LoginActivity"
             android:exported="true"
-            android:noHistory="true"
-            />
+            android:noHistory="true" />
         <activity
             android:name=".SignUp"
             android:exported="true"

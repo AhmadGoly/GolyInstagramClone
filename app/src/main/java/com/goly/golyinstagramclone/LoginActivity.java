@@ -2,6 +2,7 @@ package com.goly.golyinstagramclone;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -43,7 +44,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             }
         });
 
-        if(ParseUser.getCurrentUser() != null)ParseUser.logOut();
+        //if(ParseUser.getCurrentUser() != null)goToSocialMediaActivity();
     }
 
     @Override
@@ -57,6 +58,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             Toast.LENGTH_LONG,FancyToast.ERROR,false).show();
 
                 }else {
+                    ProgressDialog loadingDialog = new ProgressDialog(this);
+                    loadingDialog.setMessage("Logging in");
+                    loadingDialog.show();
                 ParseUser.logInInBackground(edtLoginEmail.getText().toString(),
                         edtLoginPassword.getText().toString(), new LogInCallback() {
                             @Override
@@ -65,6 +69,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                     FancyToast.makeText(LoginActivity.this,
                                             user.get("username")+ " is logged in successfully",
                                             Toast.LENGTH_LONG,FancyToast.SUCCESS,false).show();
+                                    goToSocialMediaActivity();
 
                                 }
                                 else FancyToast.makeText(LoginActivity.this,
@@ -72,7 +77,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                         Toast.LENGTH_LONG,FancyToast.ERROR,false).show();
                             }
                         }
-                );}
+                );
+                    loadingDialog.dismiss();
+                }
                 break;
             case R.id.btnGoToSignUpActivity:
                 Intent intent = new Intent(LoginActivity.this,SignUp.class);
@@ -84,5 +91,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void rootLayoutTapped(View view){
         InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
         inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),0);
+    }
+    private void goToSocialMediaActivity(){
+        Intent intent = new Intent(LoginActivity.this,SocialMediaActivity.class);
+        startActivity(intent);
     }
 }

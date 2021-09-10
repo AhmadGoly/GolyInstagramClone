@@ -49,7 +49,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
                 return false;
             }
         });
-        if(ParseUser.getCurrentUser() != null )ParseUser.logOut();
+        //if(ParseUser.getCurrentUser() != null )goToSocialMediaActivity();
 
     }
 
@@ -83,6 +83,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
                                 FancyToast.makeText(SignUp.this,
                                         newUser.getUsername() + " is signed up successfully!",
                                         Toast.LENGTH_SHORT, FancyToast.SUCCESS, false).show();
+                                        goToSocialMediaActivity();
 
                             } else FancyToast.makeText(SignUp.this, e.getMessage(),
                                     Toast.LENGTH_LONG, FancyToast.ERROR, false).show();
@@ -99,14 +100,15 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
 
         }
     }
-    public void showFancyToast(Context c, String s, int state){
-        //https://github.com/Shashank02051997/FancyToast-Android
-        FancyToast.makeText(c,s,FancyToast.LENGTH_LONG,state,true).show();
-    }
     public void rootLayoutTapped(View view){
         try {
             InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
             inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
         }catch(Exception e){}
+    }
+    private void goToSocialMediaActivity(){
+        Intent intent = new Intent(SignUp.this,SocialMediaActivity.class);
+        startActivity(intent);
+
     }
 }
