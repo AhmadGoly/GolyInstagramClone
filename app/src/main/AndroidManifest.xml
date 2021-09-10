@@ -12,7 +12,8 @@
         android:theme="@style/Theme.GolyInstagramClone">
         <activity
             android:name=".SocialMediaActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/Theme.GolyInstagramClone.NoActionBar"/>
         <activity
             android:name=".LoginActivity"
             android:exported="true"
