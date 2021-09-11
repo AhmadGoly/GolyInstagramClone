@@ -19,7 +19,7 @@ public class startingActivity extends AppCompatActivity implements View.OnClickL
         btnLogIn = findViewById(R.id.btnStartLog);
         btnSignUp.setOnClickListener(this);
         btnLogIn.setOnClickListener(this);
-        if(ParseUser.getCurrentUser() != null )goToSocialMediaActivity();
+        if(ParseUser.getCurrentUser() != null)goToSocialMediaActivity();
 
 
     }
@@ -35,7 +35,7 @@ public class startingActivity extends AppCompatActivity implements View.OnClickL
                 Intent intent = new Intent(startingActivity.this,LoginActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.btnSignUp:
+            case R.id.btnStartSignUp:
                 Intent intent2 = new Intent(startingActivity.this,SignUp.class);
                 startActivity(intent2);
                 break;

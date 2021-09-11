@@ -87,10 +87,10 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
 
                             } else FancyToast.makeText(SignUp.this, e.getMessage(),
                                     Toast.LENGTH_LONG, FancyToast.ERROR, false).show();
-
+                            loadingDialog.dismiss();
                         }
                     });
-                    loadingDialog.dismiss();
+
                 }
                 break;
             case R.id.btnGoToLoginActivity:

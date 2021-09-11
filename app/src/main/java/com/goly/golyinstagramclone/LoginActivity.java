@@ -75,10 +75,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                 else FancyToast.makeText(LoginActivity.this,
                                         "ERROR: "+e.getMessage(),
                                         Toast.LENGTH_LONG,FancyToast.ERROR,false).show();
+                                loadingDialog.dismiss();
                             }
                         }
                 );
-                    loadingDialog.dismiss();
+
                 }
                 break;
             case R.id.btnGoToSignUpActivity:
