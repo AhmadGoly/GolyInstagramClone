@@ -16,4 +16,8 @@
     <color name="secondaryDarkColor">#002f6c</color>
     <color name="primaryTextColor">#ffffff</color>
     <color name="secondaryTextColor">#ffffff</color>
+
+    <color name="golyTextTitle">#EC407A</color>
+    <color name="golyTextTitleDarker">#7E2140</color>
+    <color name="golyTextTitleLigher">#E66893</color>
 </resources>
