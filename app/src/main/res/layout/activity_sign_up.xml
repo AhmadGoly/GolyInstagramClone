@@ -94,7 +94,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
-        android:text="Sign in"
+        android:text="Sign up"
         app:layout_constraintBottom_toTopOf="@+id/btnGoToLoginActivity"
         app:layout_constraintEnd_toStartOf="@+id/guideline1"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
