@@ -112,11 +112,6 @@ public class SharePictureTab extends Fragment implements View.OnClickListener {
                                     dialog.dismiss();
                             }
                         });
-
-
-
-
-
                     }
                 }
                 else FancyToast.makeText(getContext(),"Select your image first.",
@@ -150,16 +145,6 @@ public class SharePictureTab extends Fragment implements View.OnClickListener {
             case 2000:
                 if(resultCode == Activity.RESULT_OK){   //We got the image.
                     try{
-                        //Uri image = data.getData();
-                        //String[] filePathColumn = {MediaStore.Images.Media.DATA};
-                        //Cursor cursor = getActivity().getContentResolver().query(image,filePathColumn,
-                        //        null,null,null);
-                        //cursor.moveToFirst();
-                        //int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-                        //String picturePath = cursor.getString(columnIndex); //picturePath
-                        //cursor.close();//we dont need it anymore. its important to close it.
-                        //Bitmap receivedImageBitmap = BitmapFactory.decodeFile(picturePath);
-                        //imgShare.setImageBitmap(receivedImageBitmap);
                         Uri returnUri = data.getData();
                         bitmapImage = MediaStore.Images.Media.getBitmap
                                 (getActivity().getContentResolver(), returnUri);

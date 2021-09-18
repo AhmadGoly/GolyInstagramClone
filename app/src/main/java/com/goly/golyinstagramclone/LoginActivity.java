@@ -61,7 +61,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     ProgressDialog loadingDialog = new ProgressDialog(this);
                     loadingDialog.setMessage("Logging in");
                     loadingDialog.show();
-                ParseUser.logInInBackground(edtLoginEmail.getText().toString(),
+                ParseUser.logInInBackground(edtLoginEmail.getText().toString().toLowerCase(),
                         edtLoginPassword.getText().toString(), new LogInCallback() {
                             @Override
                             public void done(ParseUser user, ParseException e) {

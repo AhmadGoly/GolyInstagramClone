@@ -69,8 +69,8 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
 
 
                     final ParseUser newUser = new ParseUser();
-                    newUser.setEmail(edtEmail.getText().toString());
-                    newUser.setUsername(edtUsername.getText().toString());
+                    newUser.setEmail(edtEmail.getText().toString().toLowerCase());
+                    newUser.setUsername(edtUsername.getText().toString().toLowerCase());
                     newUser.setPassword(edtPassword.getText().toString());
 
                     ProgressDialog loadingDialog = new ProgressDialog(this);
